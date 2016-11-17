@@ -1,0 +1,38 @@
+Arguments: 
+  /Users/coletownsend/.nvm/versions/node/v5.2.0/bin/node /usr/local/bin/yarn add react-redux
+
+PATH: 
+  /usr/local/var/rbenv/shims:/Users/coletownsend/.nvm/versions/node/v5.2.0/bin:/usr/local/var/rbenv:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:.git/safe/../../bin:/Users/coletownsend/.bin:/usr/local/sbin:/Users/coletownsend/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  0.17.2
+
+Node version: 
+  5.2.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "LayupsReactNative",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+      "start": "node node_modules/react-native-macos/local-cli/cli.js start"
+    },
+    "dependencies": {
+      "react": "15.3.2",
+      "react-native-macos": "^0.10.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EACCES: permission denied, rmdir '/Users/coletownsend/Documents/gits/LayupsReactNative/node_modules/react-native-macos/node_modules/whatwg-fetch'
+      at Error (native)
