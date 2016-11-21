@@ -1,12 +1,10 @@
  import React from 'react';
  import ReactNative from 'react-native-macos';
  const {
-   AppRegistry,
    StyleSheet,
    Text,
    View,
  } = ReactNative;
-import {Provider} from 'react-redux';
 import ShadowStyles from '../styles/shadows';
 
 export default class ImageUploader extends React.Component {

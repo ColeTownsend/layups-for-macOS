@@ -2,11 +2,15 @@ import React from 'react';
 import ReactNative from 'react-native-macos';
 const {
   StyleSheet,
-  Text,
-  TextInput,
   View,
+  TextInput,
+  // TouchableOpacity,
+  // TouchableHighlight,
+  // Linking,
+  // PickerIOS,
+  // Image,
+  // Dimensions,
 } = ReactNative;
-import {Provider} from 'react-redux';
 import ShadowStyles from '../styles/shadows';
 
 export default class ShotDetailsForm extends React.Component {
@@ -18,7 +22,13 @@ export default class ShotDetailsForm extends React.Component {
     return (
       // <Provider store={store}>
         <View style={styles.form}>
-
+          <View style={styles.title}>
+            <TextInput
+              style={styles.textinput}
+              placeholder="Title"
+              autoCorrect={false}
+            />
+          </View>
         </View>
       // </Provider>
     );
@@ -27,6 +37,6 @@ export default class ShotDetailsForm extends React.Component {
 
 const styles = StyleSheet.create({
   form: {
-
+    flex: 1,
   },
 });

@@ -1,9 +1,11 @@
 // LoginScreen
 export const BEGIN_DRIBBBLE_SSO = 'BEGIN_DRIBBBLE_SSO';
-export const LOG_IN = 'LOG_IN';
+export const DRIBBBLE_SSO_FAILURE = 'DRIBBBLE_SSO_FAILURE';
+export const DRIBBBLE_SSO_SUCCESS = 'DRIBBBLE_SSO_SUCCESS';
 export const LOG_OUT = 'LOG_OUT';
 
 // Load User Data screens
+export const GET_USER_INFO = 'GET_USER_INFO';
 export const GET_TEAMS = 'GET_TEAMS';
 
 // Create a Shots

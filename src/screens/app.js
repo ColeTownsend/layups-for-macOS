@@ -1,38 +1,34 @@
 import React from 'react';
 import ReactNative from 'react-native-macos';
 const {
-  AppRegistry,
   StyleSheet,
-  Text,
   View,
 } = ReactNative;
-import ShadowStyles from '../styles/shadows'
-import {Provider} from 'react-redux';
-import ShotUploader from '../components/shot-image-uploader';
-import ShotDetailsForm from '../components/shot-image-uploader';
-// import LoginScreen from './login-screen';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as AuthActions from '../actions/auth-actions';
+// import * as PostActions from '../actions/post-actions';
 
-// Post Shot
-// import PostShotScreen from './edit-event-screen.js'
+// screens
+import LoginScreen from './login-screen';
+// import Home from './home.js'
 
-// import store from '../store';
-import routes from './routes';
+// import routes from './routes';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    return (
-      // <Provider store={store}>
-        <View style={styles.container}>
-          <ShotUploader />
-          <View style={styles.infoWrapper}>
+    const auth_actions = bindActionCreators(AuthActions, this.props.dispatch);
+    // const post_actions = bindActionCreators(PostActions, this.props.dispatch);
 
-          </View>
-        </View>
-      // </Provider>
+    return (
+      <View style={styles.container}>
+        <LoginScreen actions={auth_actions} {...this.props}/>
+        {/* {this.props.token && <Home {...this.props} actions={post_actions}/>} */}
+      </View>
     );
   }
 }
@@ -59,3 +55,10 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+function mapStateToProps(state) {
+  return state;
+}
+
+const AppContainer = connect(mapStateToProps)(App);
+module.exports = AppContainer;

@@ -1,13 +1,14 @@
 import {
   BEGIN_DRIBBBLE_SSO,
-} from '../actions/actionTypes';
+  SIGN_IN
+} from '../actions/action-types';
 import routes from '../screens/routes';
 
 const initialState = {
   nextRoute: null,
 };
 
-export default function LoginScreen(state = initialState, action) {
+export default function loginScreen(state = initialState, action) {
   switch (action.type) {
     case BEGIN_DRIBBBLE_SSO:
       switch (action.status) {
@@ -26,7 +27,6 @@ export default function LoginScreen(state = initialState, action) {
         default:
           return state;
       }
-      break;
     case SIGN_IN:
       switch (action.status) {
         case 'success':
@@ -39,13 +39,11 @@ export default function LoginScreen(state = initialState, action) {
           return {
             ...state,
             nextRoute: null,
-            error: {action.error.meta}
+            error: action.error.meta
           }
-        };
-      default:
+        default:
           return state;
       }
-      break;
     default:
       return state;
   }

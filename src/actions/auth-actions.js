@@ -1,16 +1,28 @@
 import {
   BEGIN_DRIBBBLE_SSO,
+  DRIBBBLE_SSO_FAILURE,
+  DRIBBBLE_SSO_SUCCESS,
   LOG_OUT
-} from './actionTypes';
+} from './action-types';
 
 export function pressLogInWithDribbble() {
-  return (dispatch) => {
-    const promisifiedDispatch = promisifyDispatch(dispatch);
-
-    return promisifiedDispatch(authenticateWithDribbble()).then(dribbbleAuth => {
-      return promisifiedDispatch(logInWithDribbble(dribbbleAuth.response.code));
+  return dispatch => {
+    dispatch({
+      type: BEGIN_DRIBBBLE_SSO
     });
-  };
+
+    authenticateWithDribbble().then((token => {
+      return dispatch({
+        type: DRIBBBLE_SSO_SUCCESS,
+        token
+      }).catch(error => {
+        return dispatch({
+          type: DRIBBBLE_SSO_FAILURE,
+          error
+        })
+      })
+    }))
+  }
 }
 
 function authenticateWithDribbble() {
@@ -20,9 +32,9 @@ function authenticateWithDribbble() {
   }
 }
 
-export function logInWithDribbble() {
+export function logOutDribbble() {
   return {
-    type: LOG_IN,
+    type: LOG_OUT,
     // change the route
   };
 }
