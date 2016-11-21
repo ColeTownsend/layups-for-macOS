@@ -8,6 +8,7 @@
   "dependencies": {
     "react": "15.3.2",
     "react-native-macos": "^0.10.5",
-    "react-redux": "^4.4.6"
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0"
   }
 }

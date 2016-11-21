@@ -17,16 +17,10 @@ export default class ShotDetailsForm extends React.Component {
   render() {
     return (
       // <Provider store={store}>
-        <View style={styles.form}>
+        <View>
 
         </View>
       // </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  form: {
-
-  },
-});
