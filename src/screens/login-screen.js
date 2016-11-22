@@ -17,10 +17,6 @@ export default class LoginScreen extends React.Component {
     super(props);
   }
 
-  pressLoginWithDribbble() {
-    this.props.dispatch(pressLogInWithDribbble());
-  }
-
   render() {
     return (
       // <Provider store={store}>
@@ -29,7 +25,7 @@ export default class LoginScreen extends React.Component {
           <TouchableOpacity
             underlayColor={shader(Colors.Dribbble, -0.05)}
             activeOpacity={1}
-            onPress={() => this.pressLoginWithDribbble()}>
+            onPress={() => pressLogInWithDribbble()}>
             <View style={styles.dribbbleButton}>
               <Text style={styles.dribbbleButtonText}>Login with Dribbble</Text>
             </View>

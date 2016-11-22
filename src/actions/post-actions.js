@@ -44,10 +44,8 @@ export function editShotTags() {
 }
 
 export function editShotRebound() {
-  return dispatch => {
-    dispatch({
-      type: EDIT_SHOT_REBOUND
-    });
+  return {
+    type: EDIT_SHOT_REBOUND
   }
 }
 

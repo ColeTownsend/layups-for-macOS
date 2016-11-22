@@ -5,36 +5,23 @@ import {
   LOG_OUT
 } from './action-types';
 
-export function pressLogInWithDribbble() {
+import {authenticateWithDribbble} from '../utilities/dribbble';
+
+export function pressLoginWithDribbble() {
   return dispatch => {
-    dispatch({
-      type: BEGIN_DRIBBBLE_SSO
-    });
+    dispatch({type: BEGIN_DRIBBBLE_SSO});
 
-    authenticateWithDribbble().then((token => {
-      return dispatch({
-        type: DRIBBBLE_SSO_SUCCESS,
-        token
-      }).catch(error => {
-        return dispatch({
-          type: DRIBBBLE_SSO_FAILURE,
-          error
-        })
-      })
-    }))
+    authenticateWithDribbble().then(token => {
+      return dispatch({type: DRIBBBLE_SSO_SUCCESS, token,})
+    }).catch(error => {
+      return dispatch({type: DRIBBBLE_SSO_FAILURE, error,})
+    })
   }
 }
 
-function authenticateWithDribbble() {
-  return {
-    type: BEGIN_DRIBBBLE_SSO,
-    // hit dribbble api?
-  }
-}
-
-export function logOutDribbble() {
+function logOutDribbble() {
   return {
     type: LOG_OUT,
-    // change the route
+    // change the route,
   };
 }

@@ -36,10 +36,11 @@ export function authenticateWithDribbble() {
     'scope=public+upload',
     'redirect_uri=urn:ietf:wg:oauth:2.0:oob'
   ].join('&');
-  fetch(ENDPOINTS.TOKEN, {
-      method: 'POST',
-      body: data
-    })
+
+  return fetch(ENDPOINTS.TOKEN, {
+    method: 'POST',
+    body: data
+  })
 }
 
 export function getDribbbleToken(code) {
