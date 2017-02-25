@@ -11,7 +11,7 @@ import * as AuthActions from '../actions/auth-actions';
 
 // screens
 import LoginScreen from './login-screen';
-// import Home from './home.js'
+import Home from './home.js'
 
 // import routes from './routes';
 
@@ -20,14 +20,30 @@ class App extends React.Component {
     super(props);
   }
 
+
+
   render() {
+    var access_token = true;
+    // {access_token} = this.state
     const auth_actions = bindActionCreators(AuthActions, this.props.dispatch);
     // const post_actions = bindActionCreators(PostActions, this.props.dispatch);
-
+    // https://github.com/ptmt/react-native-macos/blob/multiple-image-representations/Examples/SimpleChatClient/discordClient.js
+    // https://github.com/ptmt/react-native-macos/blob/respondsToLiveResizing/Examples/SimpleGmailClient/index.osx.js
     return (
       <View style={styles.container}>
-        <LoginScreen actions={auth_actions} {...this.props}/>
-        {/* {this.props.token && <Home {...this.props} actions={post_actions}/>} */}
+        {!access_token &&
+          <LoginScreen
+            // onSignin={(tokens) => this.setState(tokens)}
+            // actions={auth_actions}
+            {...this.props}
+          />
+        }
+        {access_token &&
+          <Home
+            {...this.props}
+            // actions={post_actions}
+          />
+        }
       </View>
     );
   }
@@ -61,4 +77,4 @@ function mapStateToProps(state) {
 }
 
 const AppContainer = connect(mapStateToProps)(App);
-module.exports = AppContainer;
+export default AppContainer;

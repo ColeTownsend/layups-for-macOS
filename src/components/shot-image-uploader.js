@@ -4,21 +4,38 @@
    StyleSheet,
    Text,
    View,
+   Image,
  } = ReactNative;
 import ShadowStyles from '../styles/shadows';
 
+// https://github.com/ptmt/react-native-macos/blob/master/Examples/UIExplorer/js/ImageEditingExample.js
 export default class ImageUploader extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      dragOver: false,
+      mouseOver: false,
+      width: null,
+      height: null,
+      files: []
+    }
   }
 
   render() {
+    console.log(this.state.files, this.state.files.length)
     return (
       // <Provider store={store}>
-          <View style={styles.dribbbleImage}>
-            <Text style={styles.uploadPrompt}>
-              Drag an image here or browse for one to upload.
-            </Text>
+          <View style={styles.dribbbleImage}
+            draggedTypes={['NSFilenamesPboardType']}
+            onMouseEnter={() => this.setState({mouseOver: true})}
+            onMouseLeave={() => this.setState({mouseOver: false})}
+            onDragEnter={() => this.setState({dragOver: true})}
+            onDragLeave={() => this.setState({dragOver: false})}
+            onDrop={(e) => this.setState({files: e.nativeEvent.files, dragOver: false})}>
+            <Text style={styles.uploadPrompt}>{this.state.files > 0 ? this.state.files : 'Drag here a file'}</Text>
+            {this.state.files > 0 &&
+              <Image source={{uri: this.state.files[0]}} style={styles.base} />
+            }
           </View>
       // </Provider>
     );
@@ -38,9 +55,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 25,
     width: 386,
+    overflow: 'hidden',
   },
   uploadPrompt: {
     fontSize: 13,
     color: "#999999",
+  },
+  base: {
+    width: 386 * 0.75,
+    height: 386,
   },
 });

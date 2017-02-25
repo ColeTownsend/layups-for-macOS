@@ -19,7 +19,7 @@ export function pressLoginWithDribbble() {
   }
 }
 
-function logOutDribbble() {
+export function logOutDribbble() {
   return {
     type: LOG_OUT,
     // change the route,
