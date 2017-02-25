@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native-macos/local-cli/cli.js start"
   },
   "dependencies": {
+    "ramda": "^0.23.0",
     "react": "15.3.2",
     "react-native-lock": "^0.5.0",
     "react-native-macos": "^0.10.5",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.10.2",
-    "eslint-plugin-react": "^6.7.1"
+    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-react-native": "^2.2.1"
   }
 }

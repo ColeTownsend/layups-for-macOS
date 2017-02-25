@@ -31,9 +31,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f2f2f2',
   },
   infoWrapper: {
     flex: 1,
+    flexDirection: 'row'
   },
 });
