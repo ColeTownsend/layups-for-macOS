@@ -14,10 +14,10 @@
 -(id)init
 {
     if(self = [super init]) {
-        NSRect contentSize = NSMakeRect(200, 500, 1000, 500); // initial size of main NSWindow
+        NSRect contentSize = NSMakeRect(200, 500, 420, 600); // initial size of main NSWindow
 
         self.window = [[NSWindow alloc] initWithContentRect:contentSize
-                                                  styleMask:NSTitledWindowMask | NSResizableWindowMask | NSFullSizeContentViewWindowMask | NSMiniaturizableWindowMask | NSClosableWindowMask
+                                                  styleMask:NSTitledWindowMask | NSFullSizeContentViewWindowMask | NSMiniaturizableWindowMask | NSClosableWindowMask
                                                     backing:NSBackingStoreBuffered
                                                       defer:NO];
         NSWindowController *windowController = [[NSWindowController alloc] initWithWindow:self.window];

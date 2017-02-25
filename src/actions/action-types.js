@@ -1,7 +1,7 @@
 // LoginScreen
-export const BEGIN_DRIBBBLE_SSO = 'BEGIN_DRIBBBLE_SSO';
-export const DRIBBBLE_SSO_FAILURE = 'DRIBBBLE_SSO_FAILURE';
-export const DRIBBBLE_SSO_SUCCESS = 'DRIBBBLE_SSO_SUCCESS';
+export const BEGIN_SIGN_IN = 'BEGIN_SIGN_IN';
+export const SIGN_IN_FAILURE = 'SIGN_IN_FAILURE';
+export const SIGN_IN_SUCCESS = 'SIGN_IN_SUCCESS';
 export const LOG_OUT = 'LOG_OUT';
 
 // Load User Data screens

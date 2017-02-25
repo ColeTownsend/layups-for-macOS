@@ -13,14 +13,14 @@ import createEngine from 'redux-storage-engine-reactnativeasyncstorage';
 
 import reducers from './src/reducers';
 import {
-  BEGIN_DRIBBBLE_SSO,
-  DRIBBBLE_SSO_FAILURE
+  BEGIN_SIGN_IN,
+  SIGN_IN_FAILURE
 } from './src/actions/action-types';
 import App from './src/screens/app';
 
 const engine = createEngine('layups');
 const wrappedReducer = storage.reducer(combineReducers(reducers));
-const storageMiddleware = storage.createMiddleware(engine, [BEGIN_DRIBBBLE_SSO, DRIBBBLE_SSO_FAILURE]);
+const storageMiddleware = storage.createMiddleware(engine, [BEGIN_SIGN_IN, SIGN_IN_FAILURE]);
 
 const middleware = process.env.NODE_ENV === 'production' ?
   [thunk, storageMiddleware] :

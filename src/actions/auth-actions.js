@@ -1,7 +1,7 @@
 import {
-  BEGIN_DRIBBBLE_SSO,
-  DRIBBBLE_SSO_FAILURE,
-  DRIBBBLE_SSO_SUCCESS,
+  BEGIN_SIGN_IN,
+  SIGN_IN_FAILURE,
+  SIGN_IN_SUCCESS,
   LOG_OUT
 } from './action-types';
 
@@ -9,12 +9,12 @@ import {authenticateWithDribbble} from '../utilities/dribbble';
 
 export function pressLoginWithDribbble() {
   return dispatch => {
-    dispatch({type: BEGIN_DRIBBBLE_SSO});
+    dispatch({type: BEGIN_SIGN_IN});
 
     authenticateWithDribbble().then(token => {
-      return dispatch({type: DRIBBBLE_SSO_SUCCESS, token,})
+      return dispatch({type: SIGN_IN_SUCCESS, token,})
     }).catch(error => {
-      return dispatch({type: DRIBBBLE_SSO_FAILURE, error,})
+      return dispatch({type: SIGN_IN_FAILURE, error,})
     })
   }
 }
@@ -22,6 +22,5 @@ export function pressLoginWithDribbble() {
 export function logOutDribbble() {
   return {
     type: LOG_OUT,
-    // change the route,
   };
 }

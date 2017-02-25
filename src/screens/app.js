@@ -4,9 +4,9 @@ const {
   StyleSheet,
   View,
 } = ReactNative;
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as AuthActions from '../actions/auth-actions';
+// import * as AuthActions from '../actions/auth-actions';
 // import * as PostActions from '../actions/post-actions';
 
 // screens
