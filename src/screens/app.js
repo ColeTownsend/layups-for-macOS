@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     var access_token = true;
     // {access_token} = this.state
-    const auth_actions = bindActionCreators(AuthActions, this.props.dispatch);
+    // const auth_actions = bindActionCreators(AuthActions, this.props.dispatch);
     // const post_actions = bindActionCreators(PostActions, this.props.dispatch);
     // https://github.com/ptmt/react-native-macos/blob/multiple-image-representations/Examples/SimpleChatClient/discordClient.js
     // https://github.com/ptmt/react-native-macos/blob/respondsToLiveResizing/Examples/SimpleGmailClient/index.osx.js

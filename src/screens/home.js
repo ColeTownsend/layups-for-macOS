@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   infoWrapper: {
-    flex: 1,
+    flex: 0,
   },
 });

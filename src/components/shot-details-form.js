@@ -19,6 +19,7 @@ export default class ShotDetailsForm extends React.Component {
   }
 
   render() {
+
     return (
       // <Provider store={store}>
         <View style={styles.form}>
@@ -29,6 +30,13 @@ export default class ShotDetailsForm extends React.Component {
               autoCorrect={false}
             />
           </View>
+          <View style={styles.description}>
+            <TextInput
+              style={styles.textinput}
+              placeholder="Description"
+              autoCorrect={true}
+            />
+          </View>
         </View>
       // </Provider>
     );
@@ -37,6 +45,9 @@ export default class ShotDetailsForm extends React.Component {
 
 const styles = StyleSheet.create({
   form: {
+    ...ShadowStyles.default,
     flex: 1,
+    height: 40,
+    width: 300,
   },
 });

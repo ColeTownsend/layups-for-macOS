@@ -22,22 +22,19 @@ export default class ImageUploader extends React.Component {
   }
 
   render() {
-    console.log(this.state.files, this.state.files.length)
     return (
-      // <Provider store={store}>
-          <View style={styles.dribbbleImage}
-            draggedTypes={['NSFilenamesPboardType']}
-            onMouseEnter={() => this.setState({mouseOver: true})}
-            onMouseLeave={() => this.setState({mouseOver: false})}
-            onDragEnter={() => this.setState({dragOver: true})}
-            onDragLeave={() => this.setState({dragOver: false})}
-            onDrop={(e) => this.setState({files: e.nativeEvent.files, dragOver: false})}>
-            <Text style={styles.uploadPrompt}>{this.state.files > 0 ? this.state.files : 'Drag here a file'}</Text>
-            {this.state.files > 0 &&
-              <Image source={{uri: this.state.files[0]}} style={styles.base} />
-            }
-          </View>
-      // </Provider>
+        <View style={styles.dribbbleImage}
+          draggedTypes={['NSFilenamesPboardType']}
+          onMouseEnter={() => this.setState({mouseOver: true})}
+          onMouseLeave={() => this.setState({mouseOver: false})}
+          onDragEnter={() => this.setState({dragOver: true})}
+          onDragLeave={() => this.setState({dragOver: false})}
+          onDrop={(e) => this.setState({files: e.nativeEvent.files, dragOver: false})}>
+          <Text style={styles.uploadPrompt}>{this.state.files > 0 ? this.state.files : 'Drag here a file'}</Text>
+          {this.state.files &&
+            <Image source={{uri: `file://${this.state.files[0]}`}} style={styles.base} />
+          }
+        </View>
     );
   }
 }
